@@ -11,7 +11,14 @@ def jogar():
 
     tentativas = definir_tentativas(nivel)
 
-    print(tentativas)
+    print(f"\nVocê tem {tentativas} chances!")   
+    
+    acertou = adivinhar(tentativas, numero_secreto)
+    
+    if(acertou):
+        print(f"\nParabéns, o número secreto era {numero_secreto}!\n")
+    else:
+        print(f"\nVocê não conseguiu, o número secreto era {numero_secreto}...\n")
 
 
 def cabecalho():
@@ -50,6 +57,36 @@ def definir_tentativas(dificuldade):
     else:
         escolher_dificuldade()
 
+def pede_chute():
+    chute = int(input("\nAdivinhe o número, de 0 a 100! "))
+
+    return chute
+
+def adivinhar(tentativas, numero_secreto):
+    while(tentativas > 0):
+
+        chute = pede_chute()
+
+        acertou = False
+        maior = chute > numero_secreto
+        menor = chute < numero_secreto
+
+        if (maior):
+            print("\nVocê chutou acima do número secreto!")
+
+            tentativas -= 1
+            print(f"Você ainda tem {tentativas} chances!")
+
+        elif(menor):
+            print("\nVocê chutou abaixo do número secreto!")
+
+            tentativas -= 1
+            print(f"Você ainda tem {tentativas} chances!")
+
+        else:
+            acertou = True
+            break
+    return acertou
 
 if (__name__ == "__main__"):
     jogar()

@@ -1,9 +1,11 @@
 Tentando recriar jogos simples em Python para retomar a prática
 
-Adivinhação     - em progresso
 
-Forca           - no futuro
+Adivinhação     - Completo
 
-Batalha naval   - no futuro
+Forca           - No futuro
+
+Batalha naval   - No futuro
+
 
 Aceito sugestões
