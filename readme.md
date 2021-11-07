@@ -3,7 +3,7 @@ Tentando recriar jogos simples em Python para retomar a prática
 
 Adivinhação     - Completo
 
-Forca           - No futuro
+Forca           - Em progresso
 
 Batalha naval   - No futuro
 
