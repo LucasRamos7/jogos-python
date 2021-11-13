@@ -72,16 +72,20 @@ def adivinhar(tentativas, numero_secreto):
         menor = chute < numero_secreto
 
         if (maior):
-            print("\nVocê chutou acima do número secreto!")
-
             tentativas -= 1
-            print(f"Você ainda tem {tentativas} chances!")
+            
+            if (tentativas > 0):
+                print("\nVocê chutou acima do número secreto!")
+                
+                print(f"Você ainda tem {tentativas} chances!")
 
-        elif(menor):
-            print("\nVocê chutou abaixo do número secreto!")
-
+        elif(menor and tentativas > 1):
             tentativas -= 1
-            print(f"Você ainda tem {tentativas} chances!")
+
+            if (tentativas > 0):
+                print("\nVocê chutou abaixo do número secreto!")
+                        
+                print(f"Você ainda tem {tentativas} chances!")
 
         else:
             acertou = True
