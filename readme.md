@@ -5,7 +5,7 @@ Adivinhação         - Completo
 
 Forca               - Completo
 
-Pedra/Papel/Tesoura - No futuro
+Pedra/Papel/Tesoura - Em progresso
 
 Batalha naval       - No futuro
 
