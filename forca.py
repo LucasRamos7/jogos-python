@@ -44,6 +44,7 @@ def cabecalho():
     print("/// Jogo da forca - Adivinhe a palavra! ///")
     print("///////////////////////////////////////////")
 
+
 def escolher_tema():
     print("\nEscolha o tema: ")
     tema = int(input("(1) Frutas  (2) Esportes  (3) Países "))
