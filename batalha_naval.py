@@ -1,3 +1,6 @@
+from classes.tabuleiro import Tabuleiro
+from classes.navios import Navio
+
 def cabecalho():
     print("\n/////////////////////")
     print("/// BATALHA NAVAL ///")
@@ -9,25 +12,14 @@ def jogar():
     cabecalho()
     print('\n\nPosicione os seus navios!\n')
 
-    linhas = [letra for letra in 'ABCDEFGHIJ']
-    colunas = [numero + 1 for numero in range(10)]
+    meu_tabuleiro = Tabuleiro()
+    tabuleiro_pc = Tabuleiro()
 
-    print(end='    ')
-    for letra in linhas:
-        print(f'{letra}', end='   ')
+    meu_tabuleiro.imprimir()
 
-    print('\n')
-    for numero in colunas:
-        print(f'{numero}', end='')
-        if numero != 10:
-            print('', end=' ')
-        for i in range(10):
-            print("  ~", end=' ')
-        print('\n')
-
-    posicao = input('insira posicao ')
-    coluna_inicial = posicao[:1]
-    linha_inicial = int(posicao[1:])
+    posicao1 = input('Insira a posição do primeiro extremo do navio: ')
+    posicao2 = input('Insira a posição do segundo extremo do navio: ')
+    navio = Navio(tamanho=5, extremo1=posicao1, extremo2=posicao2)
 
 
 if __name__ == '__main__':
