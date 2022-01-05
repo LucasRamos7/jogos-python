@@ -26,71 +26,82 @@ def cabecalho():
     print("/// Adivinhe o número secreto! ///")
     print("//////////////////////////////////")
 
+
 def sorteia_numero():
     numero_secreto = round(random.randrange(0, 101))
     return numero_secreto
 
+
 def escolher_dificuldade():
-    print ("\nEscolha a dificuldade, de 1 a 3")
+    print("\nEscolha a dificuldade, de 1 a 3")
     dificuldade = int(input("(1) Fácil  (2) Médio  (3) Difícil "))
 
     while (dificuldade not in [1, 2, 3]):
-        print ("\nEscolha a dificuldade, de 1 a 3")
+        print("\nEscolha a dificuldade, de 1 a 3")
         dificuldade = int(input("(1) Fácil  (2) Médio  (3) Difícil "))
     
     return dificuldade
-    #definir_tentativas(dificuldade)
-    
+
+
 def definir_tentativas(dificuldade):
-    if (dificuldade == 1):
+    if dificuldade == 1:
         numero_de_tentativas = 20
 
         return numero_de_tentativas
-    elif (dificuldade == 2):
+    elif dificuldade == 2:
         numero_de_tentativas = 10
 
         return numero_de_tentativas
-    elif(dificuldade == 3):
+    elif dificuldade == 3:
         numero_de_tentativas = 5
 
         return numero_de_tentativas
     else:
         escolher_dificuldade()
 
+
 def pede_chute():
     chute = int(input("\nAdivinhe o número, de 0 a 100! "))
 
     return chute
 
+
 def adivinhar(tentativas, numero_secreto):
-    while(tentativas > 0):
+    acertou = False
+
+    while tentativas > 0:
 
         chute = pede_chute()
 
-        acertou = False
         maior = chute > numero_secreto
         menor = chute < numero_secreto
 
-        if (maior):
+        if maior:
             tentativas -= 1
             
-            if (tentativas > 0):
+            if tentativas > 0:
                 print("\nVocê chutou acima do número secreto!")
                 
                 print(f"Você ainda tem {tentativas} chances!")
+            else:
+                break
 
-        elif(menor and tentativas > 1):
+        elif menor:
             tentativas -= 1
 
-            if (tentativas > 0):
+            if tentativas > 0:
                 print("\nVocê chutou abaixo do número secreto!")
-                        
+
                 print(f"Você ainda tem {tentativas} chances!")
+            else:
+                break
 
         else:
             acertou = True
             break
+    print(acertou)
     return acertou
 
-if (__name__ == "__main__"):
+
+if __name__ == "__main__":
     jogar()

@@ -1,5 +1,5 @@
-import forca
 import adivinhacao
+import forca
 import jokenpo
 
 
@@ -13,7 +13,7 @@ def escolher_jogo():
 
     jogo = int(input('(1) Adivinhação  (2) Jogo da Forca  (3) Jo-ken-po '))
 
-    while (jogo not in {1, 2, 3}):
+    while jogo not in {1, 2, 3}:
         print('\nNúmero de jogo inválido.')
         print('Qual jogo você deseja jogar?')
 
@@ -33,6 +33,6 @@ def escolher_jogo():
         jokenpo.jogar()
 
 
-if (__name__ == '__main__'):
+if __name__ == '__main__':
     escolher_jogo()
         

@@ -9,7 +9,7 @@ def jogar():
     vitorias_jogador = 0
     vitorias_pc = 0
 
-    while (vitorias_jogador < 3 and vitorias_pc < 3):
+    while vitorias_jogador < 3 and vitorias_pc < 3:
         aposta_pc = sorteia_pc()
         aposta_jogador = pede_aposta()
         empate = aposta_jogador == aposta_pc
@@ -47,11 +47,11 @@ def cabecalho():
 def sorteia_pc():
     numero = round(random.randrange(0, 3))
 
-    if (numero == 0):
+    if numero == 0:
         return 'pedra'
-    elif (numero == 1):
+    elif numero == 1:
         return 'papel'
-    elif (numero == 2):
+    elif numero == 2:
         return 'tesoura'
 
 
@@ -64,35 +64,35 @@ def pede_aposta():
     while numero not in [1, 2, 3]:
         numero = int(input('Jogada inválida, escolha um número de 1 a 3! '))
 
-    if (numero == 1):
+    if numero == 1:
         return 'pedra'
-    elif (numero == 2):
+    elif numero == 2:
         return 'papel'
-    elif (numero == 3):
+    elif numero == 3:
         return 'tesoura'
 
 
 def compara_jogadas(aposta_pc, aposta_jogador):
-    if (aposta_pc == 'pedra'):
-        if (aposta_jogador == 'papel'):
+    if aposta_pc == 'pedra':
+        if aposta_jogador == 'papel':
             return 'jogador'
         else:
             return 'pc'
 
-    elif (aposta_pc == 'papel'):
-        if (aposta_jogador == 'tesoura'):
+    elif aposta_pc == 'papel':
+        if aposta_jogador == 'tesoura':
             return 'jogador'
         else:
             return 'pc'
-    elif (aposta_pc == 'tesoura'):
-        if (aposta_jogador == 'pedra'):
+    elif aposta_pc == 'tesoura':
+        if aposta_jogador == 'pedra':
             return 'jogador'
         else:
             return 'pc'
 
 
 def mensagem_final(vitorias_jogador):
-    if (vitorias_jogador == 3):
+    if vitorias_jogador == 3:
         print('\nParabéns, você é mais inteligente que o PC!')
     else:
         print('\nVocê foi superado...\n')
