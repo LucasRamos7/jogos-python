@@ -1,3 +1,5 @@
+from navios import Navio
+
 class Tabuleiro():
     def __init__(self):
         self.linhas = [letra for letra in 'ABCDEFGHIJ']
@@ -17,3 +19,8 @@ class Tabuleiro():
             for i in range(10):
                 print(f"  {self.area_navios[numero - 1][i]}", end=' ')
             print('\n')
+
+    def posiciona_navio(self, navio: Navio):
+        for coordenada in navio.posicao:
+            coluna = coordenada[:1]
+            linha = coordenada[1:]

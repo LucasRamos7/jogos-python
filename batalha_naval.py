@@ -1,5 +1,6 @@
-from classes.tabuleiro import Tabuleiro
-from classes.navios import Navio
+from classes_batalha_naval.tabuleiro import Tabuleiro
+from classes_batalha_naval.navios import Navio
+
 
 def cabecalho():
     print("\n/////////////////////")
@@ -12,14 +13,21 @@ def jogar():
     cabecalho()
     print('\n\nPosicione os seus navios!\n')
 
-    meu_tabuleiro = Tabuleiro()
+    tabuleiro_jogador = Tabuleiro()
     tabuleiro_pc = Tabuleiro()
 
-    meu_tabuleiro.imprimir()
+    tabuleiro_jogador.imprimir()
 
-    posicao1 = input('Insira a posição do primeiro extremo do navio: ')
-    posicao2 = input('Insira a posição do segundo extremo do navio: ')
-    navio = Navio(tamanho=5, extremo1=posicao1, extremo2=posicao2)
+    porta_avioes_jogador = Navio(tamanho=5, nome='Porta-Aviões')
+    tanque1_jogador = Navio(tamanho=4, nome='Tanque 1')
+    tanque2_jogador = Navio(tamanho=4, nome='Tanque 2')
+    destroyer1_jogador = Navio(tamanho=3, nome='Destroyer 1')
+    destroyer2_jogador = Navio(tamanho=3, nome='Destroyer 2')
+    destroyer3_jogador = Navio(tamanho=3, nome='Destroyer 3')
+    submarino1_jogador = Navio(tamanho=2, nome='Submarino 1')
+    submarino2_jogador = Navio(tamanho=2, nome='Submarino 2')
+    submarino3_jogador = Navio(tamanho=2, nome='Submarino 3')
+    submarino4_jogador = Navio(tamanho=2, nome='Submarino 4')
 
 
 if __name__ == '__main__':
