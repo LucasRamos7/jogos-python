@@ -10,7 +10,6 @@ class Navio():
 
         print(f'Navio alocado nas posições {self.posicao[0]}-{self.posicao[-1]}')
 
-
     def pede_posicoes_navio(self):
         posicao1 = input(f'Insira a posição do primeiro extremo do {self.nome} ({self.tamanho} espaços): ')
         posicao2 = input(f'Insira a posição do segundo extremo do {self.nome} ({self.tamanho} espaços): ')

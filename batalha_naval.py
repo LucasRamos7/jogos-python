@@ -19,6 +19,7 @@ def jogar():
     tabuleiro_jogador.imprimir()
 
     porta_avioes_jogador = Navio(tamanho=5, nome='Porta-Aviões')
+    tabuleiro_jogador.posiciona_navio(porta_avioes_jogador)
     tanque1_jogador = Navio(tamanho=4, nome='Tanque 1')
     tanque2_jogador = Navio(tamanho=4, nome='Tanque 2')
     destroyer1_jogador = Navio(tamanho=3, nome='Destroyer 1')

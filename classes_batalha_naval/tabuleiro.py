@@ -1,10 +1,11 @@
-from navios import Navio
+from .navios import Navio
+
 
 class Tabuleiro():
     def __init__(self):
         self.linhas = [letra for letra in 'ABCDEFGHIJ']
         self.colunas = [numero + 1 for numero in range(10)]
-        self.area_navios = [['~'] * 10] * 10
+        self.area_navios = [['~' for i in range(10)] for j in range(10)]
 
     def imprimir(self):
         print(end='    ')
@@ -21,6 +22,17 @@ class Tabuleiro():
             print('\n')
 
     def posiciona_navio(self, navio: Navio):
+        print(navio.posicao)
         for coordenada in navio.posicao:
-            coluna = coordenada[:1]
-            linha = coordenada[1:]
+
+            letra_coluna = coordenada[:1]
+            print(letra_coluna)
+            coluna = ord(letra_coluna) - 65
+            print(coluna)
+            linha = int(coordenada[1:]) - 1
+            print(linha)
+
+            self.area_navios[coluna][linha] = 'N'
+
+        self.imprimir()
+

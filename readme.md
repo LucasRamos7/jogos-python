@@ -1,6 +1,5 @@
 Tentando recriar jogos simples em Python para retomar a prática
 
-
 Adivinhação         - Completo
 
 Forca               - Completo
